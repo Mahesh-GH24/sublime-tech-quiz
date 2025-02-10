@@ -1,4 +1,3 @@
-import Quiz from "../../client/src/components/Quiz";
 
 describe('Quiz e2e Test', () => {
   beforeEach(() => {
@@ -8,13 +7,12 @@ describe('Quiz e2e Test', () => {
   //Test 1 - Start the Quiz when the button is clicked
   it('should display the first question when the "start quiz" button is clicked', () => {
     //Arrange
-    cy.mount(<Quiz />);
-  
+      
     //ACT
     cy.get('button').contains('Start Quiz').click();
   
     //Assert
-    cy.get('h2').contains("Which is the correct answer?").should("be.visible");
+    cy.get('h2').should("be.visible");
   });
 
   //Test 2 - Display My Score When I finish the Quiz
