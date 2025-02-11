@@ -1,8 +1,6 @@
 //import React from 'react'
 import Quiz from '../../client/src/components/Quiz'
 
-//Component Test 1 - simple rendering
-
 describe('<Quiz />', () => {
 
 
@@ -20,11 +18,13 @@ describe('<Quiz />', () => {
       })
   });
 
+  //Component Test 1 - simple rendering
   //success
   it('renders', () => {
     cy.mount(<Quiz />)
   })
 
+  //Component Test 2 - mounts and displays the "Start Quiz" button
   //success
   it('mounts and displays the "Start Quiz" button', () => {
     //Arrange
@@ -36,6 +36,7 @@ describe('<Quiz />', () => {
     cy.get('button').contains('Start Quiz').should("be.visible");
   });
 
+  //Component Test 3 - should display the first question when the "start quiz" button is clicked
   //success
   it('should display the first question when the "start quiz" button is clicked', () => {
     //Arrange
@@ -48,6 +49,8 @@ describe('<Quiz />', () => {
     cy.get('h2').should("be.visible");
   });
 
+  //Component Test 4 - should display four choices for the first question from the fixtures-questions.json
+  //success
   it('should display four choices for the first question when the "start quiz" button is clicked', () => {
 
     //Arrange
